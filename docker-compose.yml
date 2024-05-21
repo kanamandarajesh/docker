@@ -1,0 +1,13 @@
+---
+version: '3.8'
+services:
+  mydb:
+      image: mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: rajesh
+  mywordpress:
+      image: wordpress
+      ports:
+        - 8888:80
+      links:
+        - mydb:mysql
