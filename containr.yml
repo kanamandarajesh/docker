@@ -1,0 +1,13 @@
+---
+version: '3.8'
+services: 
+ myweb:
+   image: nginx
+   ports:
+     - 9999:8080
+ myqa:
+   image: tomee
+   ports:
+     - 8888:8080
+   links:
+     - myweb:nginx

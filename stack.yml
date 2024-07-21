@@ -1,0 +1,12 @@
+---
+version: '3.8'
+services:
+  mystack:
+    image: nginx
+    ports:
+      - 8888:8080
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == manager
